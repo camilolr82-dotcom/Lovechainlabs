@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lovechain Labs — Phase 0.2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+```
+body {
+  background-color: #0a0a0a;
+  color: #e8ddd0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* =====================
+   LANG SWITCHER
+===================== */
+.lang-switcher {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: #3a2a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 4px;
+}
+
+.lang-btn.active {
+  color: #9e8e7e;
+}
+
+.lang-btn:hover {
+  color: #d4c4b0;
+}
+
+.lang-divisor {
+  color: #2a1a0a;
+  font-size: 10px;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  border-bottom: 1px solid #3a3028;
+}
+
+.labs-nombre {
+  font-size: 13px;
+  letter-spacing: 6px;
+  color: #9e8e7e;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.producto-nombre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 88px;
+  font-weight: 300;
+  color: #f0e6d8;
+  letter-spacing: 12px;
+  margin-bottom: 28px;
+  line-height: 1;
+}
+
+.slogan {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  color: #b09e8e;
+  margin-bottom: 48px;
+  max-width: 400px;
+  line-height: 2;
+}
+
+.boton {
+  border: 1px solid #9e8e7e;
+  color: #e8ddd0;
+  padding: 16px 40px;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  transition: all 0.4s ease;
+  display: inline-block;
+}
+
+.boton:hover {
+  background-color: #9e8e7e;
+  color: #0a0a0a;
+}
+
+/* =====================
+   SHARED SECTION STYLES
+===================== */
+.seccion-label {
+  font-size: 12px;
+  letter-spacing: 6px;
+  color: #9e8e7e;
+  margin-bottom: 32px;
+}
+
+.seccion-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  color: #f0e6d8;
+  line-height: 1.3;
+  margin-bottom: 32px;
+}
+
+.seccion-descripcion {
+  font-size: 14px;
+  font-weight: 200;
+  color: #9e8e7e;
+  line-height: 2;
+  max-width: 600px;
+  margin: 0 auto 80px auto;
+}
+
+/* =====================
+   EL DESAFÍO
+===================== */
+.problema {
+  padding: 120px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.consecuencias {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.consecuencia-item {
+  flex: 1;
+  min-width: 260px;
+  max-width: 320px;
+  text-align: left;
+  padding: 40px 32px;
+  border: 1px solid #1e1a17;
+  border-top: 1px solid #3a3028;
+}
+
+.consecuencia-numero {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #8a7a6a;
+  margin-bottom: 20px;
+}
+
+.consecuencia-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: #d4c4b0;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.consecuencia-texto {
+  font-size: 14px;
+  font-weight: 300;
+  color: #a89888;
+  line-height: 1.9;
+}
+
+/* =====================
+   LA SOLUCIÓN
+===================== */
+.solucion {
+  padding: 120px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.protocolo-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 64px auto;
+  max-width: 800px;
+  border: 1px solid #1e1a17;
+  flex-wrap: wrap;
+}
+
+.protocolo-dato {
+  flex: 1;
+  min-width: 140px;
+  padding: 40px 24px;
+}
+
+.dato-numero {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: #d4c4b0;
+  margin-bottom: 8px;
+}
+
+.dato-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #9e8e7e;
+}
+
+.protocolo-divisor {
+  width: 1px;
+  height: 80px;
+  background-color: #1e1a17;
+}
+
+.ingredientes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background-color: #1a1510;
+  border: 1px solid #1e1a17;
+  margin-bottom: 80px;
+  text-align: left;
+}
+
+.ingrediente-item {
+  padding: 32px 28px;
+  background-color: #0a0a0a;
+  transition: background-color 0.3s ease;
+}
+
+.ingrediente-item:hover {
+  background-color: #111008;
+}
+
+.ingrediente-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #1e1a17;
+  padding-bottom: 12px;
+}
+
+.ingrediente-nombre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: #d4c4b0;
+  font-weight: 400;
+}
+
+.ingrediente-dosis {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #9e8e7e;
+}
+
+.ingrediente-funcion {
+  font-size: 13px;
+  font-weight: 300;
+  color: #9a8a7a;
+  line-height: 1.8;
+}
+
+.experiencia {
+  border: 1px solid #1e1a17;
+  border-top: 1px solid #3a3028;
+  padding: 48px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.experiencia-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.experiencia-item {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #b0a090;
+  text-align: left;
+}
+
+/* =====================
+   LA CIENCIA
+===================== */
+.ciencia {
+  padding: 120px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #1a1510;
+}
+
+.ciencia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 48px;
+  margin-top: 64px;
+  text-align: left;
+}
+
+.ciencia-item {
+  border-left: 1px solid #3a3028;
+  padding-left: 28px;
+}
+
+.ciencia-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #d4c4b0;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.ciencia-texto {
+  font-size: 14px;
+  font-weight: 300;
+  color: #9a8a7a;
+  line-height: 1.9;
+}
+
+/* =====================
+   EL PROTOCOLO
+===================== */
+.protocolo {
+  padding: 120px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #1a1510;
+}
+
+.pasos {
+  display: flex;
+  gap: 0;
+  margin: 64px auto;
+  max-width: 900px;
+  border: 1px solid #1e1a17;
+  flex-wrap: wrap;
+}
+
+.paso-item {
+  flex: 1;
+  min-width: 260px;
+  padding: 48px 36px;
+  text-align: left;
+  border-right: 1px solid #1e1a17;
+}
+
+.paso-item:last-child {
+  border-right: none;
+}
+
+.paso-numero {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #8a7a6a;
+  margin-bottom: 24px;
+}
+
+.paso-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #d4c4b0;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.paso-texto {
+  font-size: 14px;
+  font-weight: 300;
+  color: #9a8a7a;
+  line-height: 1.9;
+}
+
+.protocolo-nota {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid #1e1a17;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #8a7a6a;
+  line-height: 1.8;
+}
+
+/* =====================
+   TOMA ACCIÓN
+===================== */
+.accion {
+  padding: 120px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #1a1510;
+}
+
+.beneficios-founders {
+  display: flex;
+  gap: 1px;
+  background-color: #1a1510;
+  border: 1px solid #1e1a17;
+  margin: 64px auto;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.beneficio-item {
+  flex: 1;
+  min-width: 220px;
+  padding: 40px 32px;
+  background-color: #0a0a0a;
+  text-align: left;
+}
+
+.beneficio-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: #d4c4b0;
+  margin-bottom: 12px;
+}
+
+.beneficio-texto {
+  font-size: 13px;
+  font-weight: 300;
+  color: #9a8a7a;
+  line-height: 1.8;
+}
+
+.formulario {
+  max-width: 560px;
+  margin: 0 auto;
+  border: 1px solid #3a3028;
+  border-top: 1px solid #6a5a4a;
+  padding: 48px;
+}
+
+.formulario-titulo {
+  font-size: 12px;
+  letter-spacing: 6px;
+  color: #b0a090;
+  margin-bottom: 32px;
+}
+
+.formulario-campos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #5a4a3a;
+  padding: 16px 0;
+  color: #e8ddd0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.campo:focus {
+  border-bottom-color: #9e8e7e;
+}
+
+.campo::placeholder {
+  color: #8a7a6a;
+  letter-spacing: 2px;
+}
+
+.boton-accion {
+  margin-top: 16px;
+  background-color: transparent;
+  border: 1px solid #9e8e7e;
+  color: #e8ddd0;
+  padding: 18px 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.boton-accion:hover {
+  background-color: #9e8e7e;
+  color: #0a0a0a;
+}
+
+.formulario-nota {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #7a6a5a;
+  margin-top: 24px;
+}
+
+.confirmacion {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #9e8e7e;
+  margin-top: 16px;
+  min-height: 20px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  border-top: 1px solid #1a1510;
+  padding: 64px 40px;
+  text-align: center;
+}
+
+.footer-marca {
+  font-size: 12px;
+  letter-spacing: 8px;
+  color: #7a6a5a;
+  margin-bottom: 12px;
+}
+
+.footer-producto {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: #6a5a4a;
+  margin-bottom: 24px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #5a4a3a;
+}
+
+/* =====================
+   RESPONSIVE MOBILE
+===================== */
+@media (max-width: 600px) {
+  .producto-nombre {
+    font-size: 52px;
+    letter-spacing: 8px;
+  }
+
+  .seccion-titulo {
+    font-size: 36px;
+  }
+
+  .protocolo-divisor {
+    display: none;
+  }
+
+  .formulario {
+    padding: 32px 24px;
+  }
+}
+```
+
+  </style>
+</head>
+<body data-lang="es">
+
+  <!-- LANG SWITCHER -->
+
+  <div class="lang-switcher">
+    <button class="lang-btn active" id="btn-es" onclick="cambiarIdioma('es')">ES</button>
+    <span class="lang-divisor">|</span>
+    <button class="lang-btn" id="btn-en" onclick="cambiarIdioma('en')">EN</button>
+  </div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <p class="labs-nombre">LOVECHAIN LABS</p>
+    <h1 class="producto-nombre">PHASE 0.2</h1>
+    <p class="slogan">Recupera lo que el tratamiento no puede devolverte.</p>
+    <a class="boton" href="#">DESCUBRIR LA FÓRMULA</a>
+  </section>
+
+  <!-- EL DESAFÍO -->
+
+  <section class="problema">
+    <p class="seccion-label">EL DESAFÍO</p>
+    <h2 class="seccion-titulo">Tu tratamiento terminó.<br>Tu batalla, no.</h2>
+    <p class="seccion-descripcion">
+      El GLP-1 hizo su trabajo. Pero al reducir el peso,
+      el cuerpo no distingue entre grasa y músculo.
+      Lo que nadie te advirtió es que hasta un 40% de
+      la pérdida puede ser masa muscular.
+    </p>
+    <div class="consecuencias">
+      <div class="consecuencia-item">
+        <p class="consecuencia-numero">01</p>
+        <p class="consecuencia-titulo">Pérdida muscular</p>
+        <p class="consecuencia-texto">El catabolismo post-tratamiento degrada tejido muscular activo, reduciendo tu metabolismo basal y tu fuerza funcional.</p>
+      </div>
+      <div class="consecuencia-item">
+        <p class="consecuencia-numero">02</p>
+        <p class="consecuencia-titulo">Efecto rebote</p>
+        <p class="consecuencia-texto">Sin masa muscular suficiente, el metabolismo se ralentiza. El cuerpo recupera grasa con mayor facilidad que antes del tratamiento.</p>
+      </div>
+      <div class="consecuencia-item">
+        <p class="consecuencia-numero">03</p>
+        <p class="consecuencia-titulo">Fatiga y niebla mental</p>
+        <p class="consecuencia-texto">La deficiencia de péptidos y micronutrientes clave genera fatiga crónica, dificultad de concentración y recuperación lenta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA SOLUCIÓN -->
+
+  <section class="solucion">
+    <p class="seccion-label">LA SOLUCIÓN</p>
+    <h2 class="seccion-titulo">No es un suplemento.<br>Es un protocolo.</h2>
+    <p class="seccion-descripcion">
+      Phase 0.2 es un sachet líquido de 30ml formulado con
+      ingredientes fitosomales y péptidos bioactivos de grado gold standard.
+      Diseñado para reactivar tu metabolismo desde adentro,
+      sin estimulantes, sin crash, sin comprometer tu resultado.
+    </p>
+
+```
+<div class="protocolo-info">
+  <div class="protocolo-dato">
+    <p class="dato-numero">30</p>
+    <p class="dato-label">DÍAS DE PROTOCOLO</p>
+  </div>
+  <div class="protocolo-divisor"></div>
+  <div class="protocolo-dato">
+    <p class="dato-numero">30ml</p>
+    <p class="dato-label">SACHET LÍQUIDO</p>
+  </div>
+  <div class="protocolo-divisor"></div>
+  <div class="protocolo-dato">
+    <p class="dato-numero">8</p>
+    <p class="dato-label">INGREDIENTES ACTIVOS</p>
+  </div>
+  <div class="protocolo-divisor"></div>
+  <div class="protocolo-dato">
+    <p class="dato-numero">0</p>
+    <p class="dato-label">ESTIMULANTES</p>
+  </div>
+</div>
+
+<div class="ingredientes">
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">Berberine Phytosome</p>
+      <p class="ingrediente-dosis">400mg</p>
+    </div>
+    <p class="ingrediente-funcion">Activación AMPK + sensibilidad a insulina. Forma fitosomal para máxima biodisponibilidad.</p>
+  </div>
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">Dihydroberberine</p>
+      <p class="ingrediente-dosis">50mg</p>
+    </div>
+    <p class="ingrediente-funcion">Versión de absorción rápida. Efecto perceptible suave sin sobreestimulación.</p>
+  </div>
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">EGCG Green Tea Extract</p>
+      <p class="ingrediente-dosis">200mg</p>
+    </div>
+    <p class="ingrediente-funcion">Oxidación de grasa activa + apoyo metabólico sostenido a lo largo del día.</p>
+  </div>
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">Inositol Blend</p>
+      <p class="ingrediente-dosis">500mg</p>
+    </div>
+    <p class="ingrediente-funcion">Ratio 40:1 Myo + D-Chiro para señalización insulínica óptima y control glucémico.</p>
+  </div>
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">Alpha Lipoic Acid</p>
+      <p class="ingrediente-dosis">150mg</p>
+    </div>
+    <p class="ingrediente-funcion">Soporte mitocondrial profundo + antioxidante metabólico de amplio espectro.</p>
+  </div>
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">L-Glutamine</p>
+      <p class="ingrediente-dosis">1,000mg</p>
+    </div>
+    <p class="ingrediente-funcion">Reparación intestinal + saciedad leve. Protege la integridad del tejido muscular.</p>
+  </div>
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">Chromium Picolinate</p>
+      <p class="ingrediente-dosis">200mcg</p>
+    </div>
+    <p class="ingrediente-funcion">Regulación precisa de glucosa en sangre. Reduce los picos post-comida.</p>
+  </div>
+  <div class="ingrediente-item">
+    <div class="ingrediente-header">
+      <p class="ingrediente-nombre">Gynostemma Extract</p>
+      <p class="ingrediente-dosis">150mg</p>
+    </div>
+    <p class="ingrediente-funcion">Activador AMPK natural. El adaptógeno favorito del protocolo biohacker avanzado.</p>
+  </div>
+</div>
+
+<div class="experiencia">
+  <p class="seccion-label">EXPERIENCIA ESPERADA</p>
+  <div class="experiencia-items">
+    <p class="experiencia-item">↓ Reducción de hambre a los 20–30 min</p>
+    <p class="experiencia-item">⚡ Estabilidad energética sostenida</p>
+    <p class="experiencia-item">∅ Sin estimulación tipo cafeína</p>
+    <p class="experiencia-item">∅ Sin crash</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- LA CIENCIA -->
+
+  <section class="ciencia">
+    <p class="seccion-label">LA CIENCIA DETRÁS</p>
+    <h2 class="seccion-titulo">Formulado para<br>un mecanismo específico.</h2>
+    <p class="seccion-descripcion">
+      La mayoría de suplementos post-dieta atacan síntomas.
+      Phase 0.2 actúa sobre los mecanismos celulares que
+      determinan cómo tu cuerpo usa y almacena energía.
+    </p>
+    <div class="ciencia-grid">
+      <div class="ciencia-item">
+        <p class="ciencia-titulo">Activación AMPK</p>
+        <p class="ciencia-texto">La enzima AMPK es el interruptor maestro del metabolismo celular. Cuando se activa, le indica a tu cuerpo que use grasa como combustible en lugar de almacenarla. Berberine Phytosome y Gynostemma activan este pathway de forma sinérgica.</p>
+      </div>
+      <div class="ciencia-item">
+        <p class="ciencia-titulo">Tecnología Fitosomal</p>
+        <p class="ciencia-texto">Los fitosomas envuelven el ingrediente activo en una membrana fosfolipídica idéntica a las células humanas. El resultado es una absorción hasta 5 veces superior comparada con extractos estándar en polvo.</p>
+      </div>
+      <div class="ciencia-item">
+        <p class="ciencia-titulo">Señalización Insulínica</p>
+        <p class="ciencia-texto">El Inositol Blend 40:1 y el Chromium Picolinate trabajan juntos para mejorar la sensibilidad a insulina a nivel celular, reduciendo los picos de glucosa que activan el almacenamiento de grasa post-tratamiento.</p>
+      </div>
+      <div class="ciencia-item">
+        <p class="ciencia-titulo">Formato Líquido</p>
+        <p class="ciencia-texto">A diferencia de cápsulas o polvos, el formato líquido en sachet permite una absorción inmediata desde la mucosa oral. Los ingredientes llegan al torrente sanguíneo antes de que comience la digestión.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROTOCOLO -->
+
+  <section class="protocolo">
+    <p class="seccion-label">EL PROTOCOLO</p>
+    <h2 class="seccion-titulo">Simple por diseño.<br>Poderoso por fórmula.</h2>
+    <p class="seccion-descripcion">
+      Un sachet al día es todo lo que necesitas.
+      Sin pilas de cápsulas, sin rutinas complicadas,
+      sin interrumpir tu día.
+    </p>
+    <div class="pasos">
+      <div class="paso-item">
+        <p class="paso-numero">01</p>
+        <p class="paso-titulo">Antes de tu comida principal</p>
+        <p class="paso-texto">Toma Phase 0.2 entre 20 y 30 minutos antes de la comida más grande de tu día para máxima efectividad.</p>
+      </div>
+      <div class="paso-item">
+        <p class="paso-numero">02</p>
+        <p class="paso-titulo">Agita y consume directo</p>
+        <p class="paso-texto">El sachet líquido de 30ml está listo para consumir. Sin mezclas, sin preparación. Perfil cítrico limpio y ligero dulzor natural.</p>
+      </div>
+      <div class="paso-item">
+        <p class="paso-numero">03</p>
+        <p class="paso-titulo">30 días continuos</p>
+        <p class="paso-texto">El protocolo completo es de 30 sachets. La consistencia activa los mecanismos celulares de forma acumulativa y sostenida.</p>
+      </div>
+    </div>
+    <div class="protocolo-nota">
+      <p>⚠ Consulta con tu médico tratante antes de iniciar cualquier protocolo de suplementación post GLP-1.</p>
+    </div>
+  </section>
+
+  <!-- TOMA ACCIÓN -->
+
+  <section class="accion">
+    <p class="seccion-label">EARLY ACCESS</p>
+    <h2 class="seccion-titulo">Sé parte de los primeros.<br>Toma Acción.</h2>
+    <p class="seccion-descripcion">
+      Phase 0.2 está en fase final de desarrollo.
+      Los primeros en registrarse tendrán acceso prioritario,
+      precio de founders y actualizaciones directas del protocolo.
+    </p>
+    <div class="beneficios-founders">
+      <div class="beneficio-item">
+        <p class="beneficio-titulo">Acceso Prioritario</p>
+        <p class="beneficio-texto">Recibes el protocolo antes que nadie cuando esté disponible.</p>
+      </div>
+      <div class="beneficio-item">
+        <p class="beneficio-titulo">Precio Founders</p>
+        <p class="beneficio-texto">Precio especial bloqueado exclusivo para los primeros registros.</p>
+      </div>
+      <div class="beneficio-item">
+        <p class="beneficio-titulo">Actualizaciones Directas</p>
+        <p class="beneficio-texto">Seguimiento del desarrollo del producto directo a tu correo.</p>
+      </div>
+    </div>
+    <div class="formulario">
+      <p class="formulario-titulo">REGISTRA TU INTERÉS</p>
+      <div class="formulario-campos">
+        <input class="campo" type="text" placeholder="Tu nombre" id="nombre"/>
+        <input class="campo" type="email" placeholder="Tu correo electrónico" id="correo"/>
+        <button class="boton-accion" onclick="enviarFormulario()">TOMA ACCIÓN →</button>
+      </div>
+      <p class="formulario-nota">Tu información es privada. Zero spam.</p>
+      <p class="confirmacion" id="confirmacion"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <p class="footer-marca">LOVECHAIN LABS</p>
+    <p class="footer-producto">PHASE 0.2 — 30-Day Metabolic Protocol</p>
+    <p class="footer-copy">© 2025 Lovechain Labs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ============================================
+    // TEXTOS EN AMBOS IDIOMAS
+    // ============================================
+    const textos = {
+      es: {
+        labsNombre: 'LOVECHAIN LABS',
+        productoNombre: 'PHASE 0.2',
+        slogan: 'Recupera lo que el tratamiento no puede devolverte.',
+        botonHero: 'DESCUBRIR LA FÓRMULA',
+        labelDesafio: 'EL DESAFÍO',
+        tituloDesafio: 'Tu tratamiento terminó.<br>Tu batalla, no.',
+        descDesafio: 'El GLP-1 hizo su trabajo. Pero al reducir el peso, el cuerpo no distingue entre grasa y músculo. Lo que nadie te advirtió es que hasta un 40% de la pérdida puede ser masa muscular.',
+        num1: '01', titulo1: 'Pérdida muscular', texto1: 'El catabolismo post-tratamiento degrada tejido muscular activo, reduciendo tu metabolismo basal y tu fuerza funcional.',
+        num2: '02', titulo2: 'Efecto rebote', texto2: 'Sin masa muscular suficiente, el metabolismo se ralentiza. El cuerpo recupera grasa con mayor facilidad que antes del tratamiento.',
+        num3: '03', titulo3: 'Fatiga y niebla mental', texto3: 'La deficiencia de péptidos y micronutrientes clave genera fatiga crónica, dificultad de concentración y recuperación lenta.',
+        labelSolucion: 'LA SOLUCIÓN',
+        tituloSolucion: 'No es un suplemento.<br>Es un protocolo.',
+        descSolucion: 'Phase 0.2 es un sachet líquido de 30ml formulado con ingredientes fitosomales y péptidos bioactivos de grado gold standard. Diseñado para reactivar tu metabolismo desde adentro, sin estimulantes, sin crash, sin comprometer tu resultado.',
+        labelDias: 'DÍAS DE PROTOCOLO', labelMl: 'SACHET LÍQUIDO', labelIngredientes: 'INGREDIENTES ACTIVOS', labelEstimulantes: 'ESTIMULANTES',
+        labelExperiencia: 'EXPERIENCIA ESPERADA',
+        exp1: '↓ Reducción de hambre a los 20–30 min', exp2: '⚡ Estabilidad energética sostenida', exp3: '∅ Sin estimulación tipo cafeína', exp4: '∅ Sin crash',
+        labelCiencia: 'LA CIENCIA DETRÁS',
+        tituloCiencia: 'Formulado para<br>un mecanismo específico.',
+        descCiencia: 'La mayoría de suplementos post-dieta atacan síntomas. Phase 0.2 actúa sobre los mecanismos celulares que determinan cómo tu cuerpo usa y almacena energía.',
+        ciencia1Titulo: 'Activación AMPK', ciencia1Texto: 'La enzima AMPK es el interruptor maestro del metabolismo celular. Cuando se activa, le indica a tu cuerpo que use grasa como combustible en lugar de almacenarla. Berberine Phytosome y Gynostemma activan este pathway de forma sinérgica.',
+        ciencia2Titulo: 'Tecnología Fitosomal', ciencia2Texto: 'Los fitosomas envuelven el ingrediente activo en una membrana fosfolipídica idéntica a las células humanas. El resultado es una absorción hasta 5 veces superior comparada con extractos estándar en polvo.',
+        ciencia3Titulo: 'Señalización Insulínica', ciencia3Texto: 'El Inositol Blend 40:1 y el Chromium Picolinate trabajan juntos para mejorar la sensibilidad a insulina a nivel celular, reduciendo los picos de glucosa que activan el almacenamiento de grasa post-tratamiento.',
+        ciencia4Titulo: 'Formato Líquido', ciencia4Texto: 'A diferencia de cápsulas o polvos, el formato líquido en sachet permite una absorción inmediata desde la mucosa oral. Los ingredientes llegan al torrente sanguíneo antes de que comience la digestión.',
+        labelProtocolo: 'EL PROTOCOLO',
+        tituloProtocolo: 'Simple por diseño.<br>Poderoso por fórmula.',
+        descProtocolo: 'Un sachet al día es todo lo que necesitas. Sin pilas de cápsulas, sin rutinas complicadas, sin interrumpir tu día.',
+        paso1Titulo: 'Antes de tu comida principal', paso1Texto: 'Toma Phase 0.2 entre 20 y 30 minutos antes de la comida más grande de tu día para máxima efectividad.',
+        paso2Titulo: 'Agita y consume directo', paso2Texto: 'El sachet líquido de 30ml está listo para consumir. Sin mezclas, sin preparación. Perfil cítrico limpio y ligero dulzor natural.',
+        paso3Titulo: '30 días continuos', paso3Texto: 'El protocolo completo es de 30 sachets. La consistencia activa los mecanismos celulares de forma acumulativa y sostenida.',
+        notaProtocolo: '⚠ Consulta con tu médico tratante antes de iniciar cualquier protocolo de suplementación post GLP-1.',
+        labelAccion: 'EARLY ACCESS',
+        tituloAccion: 'Sé parte de los primeros.<br>Toma Acción.',
+        descAccion: 'Phase 0.2 está en fase final de desarrollo. Los primeros en registrarse tendrán acceso prioritario, precio de founders y actualizaciones directas del protocolo.',
+        beneficio1Titulo: 'Acceso Prioritario', beneficio1Texto: 'Recibes el protocolo antes que nadie cuando esté disponible.',
+        beneficio2Titulo: 'Precio Founders', beneficio2Texto: 'Precio especial bloqueado exclusivo para los primeros registros.',
+        beneficio3Titulo: 'Actualizaciones Directas', beneficio3Texto: 'Seguimiento del desarrollo del producto directo a tu correo.',
+        formularioTitulo: 'REGISTRA TU INTERÉS',
+        placeholderNombre: 'Tu nombre', placeholderCorreo: 'Tu correo electrónico',
+        botonAccion: 'TOMA ACCIÓN →',
+        formularioNota: 'Tu información es privada. Zero spam.',
+        errorCampos: 'Por favor completa todos los campos.',
+        mensajeExito: '✓ Registro recibido. Bienvenido a Lovechain Labs.',
+        footerProducto: 'PHASE 0.2 — 30-Day Metabolic Protocol',
+        footerCopy: '© 2025 Lovechain Labs. All rights reserved.'
+      },
+      en: {
+        labsNombre: 'LOVECHAIN LABS',
+        productoNombre: 'PHASE 0.2',
+        slogan: 'Recover what the treatment could not give back.',
+        botonHero: 'DISCOVER THE FORMULA',
+        labelDesafio: 'THE CHALLENGE',
+        tituloDesafio: 'Your treatment is over.<br>Your battle is not.',
+        descDesafio: 'GLP-1 did its job. But when reducing weight, the body does not distinguish between fat and muscle. What no one warned you about is that up to 40% of the loss can be muscle mass.',
+        num1: '01', titulo1: 'Muscle Loss', texto1: 'Post-treatment catabolism degrades active muscle tissue, reducing your basal metabolism and functional strength.',
+        num2: '02', titulo2: 'Rebound Effect', texto2: 'Without sufficient muscle mass, metabolism slows down. The body regains fat more easily than before the treatment.',
+        num3: '03', titulo3: 'Fatigue & Brain Fog', texto3: 'Deficiency in key peptides and micronutrients generates chronic fatigue, difficulty concentrating and slow recovery.',
+        labelSolucion: 'THE SOLUTION',
+        tituloSolucion: 'Not a supplement.<br>A protocol.',
+        descSolucion: 'Phase 0.2 is a 30ml liquid sachet formulated with phytosomal ingredients and gold standard bioactive peptides. Designed to reactivate your metabolism from within, without stimulants, without crash, without compromising your result.',
+        labelDias: 'DAY PROTOCOL', labelMl: 'LIQUID SACHET', labelIngredientes: 'ACTIVE INGREDIENTS', labelEstimulantes: 'STIMULANTS',
+        labelExperiencia: 'EXPECTED EXPERIENCE',
+        exp1: '↓ Hunger reduction within 20–30 min', exp2: '⚡ Sustained energy stability', exp3: '∅ No caffeine-like stimulation', exp4: '∅ No crash',
+        labelCiencia: 'THE SCIENCE BEHIND',
+        tituloCiencia: 'Formulated for<br>a specific mechanism.',
+        descCiencia: 'Most post-diet supplements target symptoms. Phase 0.2 acts on the cellular mechanisms that determine how your body uses and stores energy.',
+        ciencia1Titulo: 'AMPK Activation', ciencia1Texto: 'The AMPK enzyme is the master switch of cellular metabolism. When activated, it signals your body to use fat as fuel instead of storing it. Berberine Phytosome and Gynostemma activate this pathway synergistically.',
+        ciencia2Titulo: 'Phytosomal Technology', ciencia2Texto: 'Phytosomes wrap the active ingredient in a phospholipid membrane identical to human cells. The result is up to 5 times superior absorption compared to standard powder extracts.',
+        ciencia3Titulo: 'Insulin Signaling', ciencia3Texto: 'The 40:1 Inositol Blend and Chromium Picolinate work together to improve insulin sensitivity at the cellular level, reducing glucose spikes that trigger post-treatment fat storage.',
+        ciencia4Titulo: 'Liquid Format', ciencia4Texto: 'Unlike capsules or powders, the liquid sachet format allows immediate absorption from the oral mucosa. Ingredients reach the bloodstream before digestion begins.',
+        labelProtocolo: 'THE PROTOCOL',
+        tituloProtocolo: 'Simple by design.<br>Powerful by formula.',
+        descProtocolo: 'One sachet a day is all you need. No pill stacks, no complicated routines, no interrupting your day.',
+        paso1Titulo: 'Before your main meal', paso1Texto: 'Take Phase 0.2 20 to 30 minutes before the largest meal of your day for maximum effectiveness.',
+        paso2Titulo: 'Shake and consume directly', paso2Texto: 'The 30ml liquid sachet is ready to consume. No mixing, no preparation. Clean citrus profile and light natural sweetness.',
+        paso3Titulo: '30 continuous days', paso3Texto: 'The complete protocol is 30 sachets. Consistency activates cellular mechanisms in a cumulative and sustained way.',
+        notaProtocolo: '⚠ Consult your treating physician before starting any post GLP-1 supplementation protocol.',
+        labelAccion: 'EARLY ACCESS',
+        tituloAccion: 'Be among the first.<br>Take Action.',
+        descAccion: 'Phase 0.2 is in final development. The first to register will have priority access, founders pricing and direct protocol updates.',
+        beneficio1Titulo: 'Priority Access', beneficio1Texto: 'You receive the protocol before anyone else when it becomes available.',
+        beneficio2Titulo: 'Founders Pricing', beneficio2Texto: 'Exclusive locked special price for the first registrations.',
+        beneficio3Titulo: 'Direct Updates', beneficio3Texto: 'Product development updates directly to your email.',
+        formularioTitulo: 'REGISTER YOUR INTEREST',
+        placeholderNombre: 'Your name', placeholderCorreo: 'Your email address',
+        botonAccion: 'TAKE ACTION →',
+        formularioNota: 'Your information is private. Zero spam.',
+        errorCampos: 'Please complete all fields.',
+        mensajeExito: '✓ Registration received. Welcome to Lovechain Labs.',
+        footerProducto: 'PHASE 0.2 — 30-Day Metabolic Protocol',
+        footerCopy: '© 2025 Lovechain Labs. All rights reserved.'
+      }
+    };
+
+    function cambiarIdioma(idioma) {
+      const t = textos[idioma];
+      document.getElementById('btn-es').classList.toggle('active', idioma === 'es');
+      document.getElementById('btn-en').classList.toggle('active', idioma === 'en');
+      document.querySelector('.labs-nombre').textContent = t.labsNombre;
+      document.querySelector('.producto-nombre').textContent = t.productoNombre;
+      document.querySelector('.slogan').textContent = t.slogan;
+      document.querySelector('.boton').textContent = t.botonHero;
+      document.querySelectorAll('.seccion-label')[0].textContent = t.labelDesafio;
+      document.querySelectorAll('.seccion-titulo')[0].innerHTML = t.tituloDesafio;
+      document.querySelectorAll('.seccion-descripcion')[0].textContent = t.descDesafio;
+      const consecItems = document.querySelectorAll('.consecuencia-item');
+      consecItems[0].querySelector('.consecuencia-numero').textContent = t.num1;
+      consecItems[0].querySelector('.consecuencia-titulo').textContent = t.titulo1;
+      consecItems[0].querySelector('.consecuencia-texto').textContent = t.texto1;
+      consecItems[1].querySelector('.consecuencia-numero').textContent = t.num2;
+      consecItems[1].querySelector('.consecuencia-titulo').textContent = t.titulo2;
+      consecItems[1].querySelector('.consecuencia-texto').textContent = t.texto2;
+      consecItems[2].querySelector('.consecuencia-numero').textContent = t.num3;
+      consecItems[2].querySelector('.consecuencia-titulo').textContent = t.titulo3;
+      consecItems[2].querySelector('.consecuencia-texto').textContent = t.texto3;
+      document.querySelectorAll('.seccion-label')[1].textContent = t.labelSolucion;
+      document.querySelectorAll('.seccion-titulo')[1].innerHTML = t.tituloSolucion;
+      document.querySelectorAll('.seccion-descripcion')[1].textContent = t.descSolucion;
+      const datoLabels = document.querySelectorAll('.dato-label');
+      datoLabels[0].textContent = t.labelDias;
+      datoLabels[1].textContent = t.labelMl;
+      datoLabels[2].textContent = t.labelIngredientes;
+      datoLabels[3].textContent = t.labelEstimulantes;
+      document.querySelectorAll('.seccion-label')[2].textContent = t.labelExperiencia;
+      const expItems = document.querySelectorAll('.experiencia-item');
+      expItems[0].textContent = t.exp1;
+      expItems[1].textContent = t.exp2;
+      expItems[2].textContent = t.exp3;
+      expItems[3].textContent = t.exp4;
+      document.querySelectorAll('.seccion-label')[3].textContent = t.labelCiencia;
+      document.querySelectorAll('.seccion-titulo')[2].innerHTML = t.tituloCiencia;
+      document.querySelectorAll('.seccion-descripcion')[2].textContent = t.descCiencia;
+      const cienciaItems = document.querySelectorAll('.ciencia-item');
+      cienciaItems[0].querySelector('.ciencia-titulo').textContent = t.ciencia1Titulo;
+      cienciaItems[0].querySelector('.ciencia-texto').textContent = t.ciencia1Texto;
+      cienciaItems[1].querySelector('.ciencia-titulo').textContent = t.ciencia2Titulo;
+      cienciaItems[1].querySelector('.ciencia-texto').textContent = t.ciencia2Texto;
+      cienciaItems[2].querySelector('.ciencia-titulo').textContent = t.ciencia3Titulo;
+      cienciaItems[2].querySelector('.ciencia-texto').textContent = t.ciencia3Texto;
+      cienciaItems[3].querySelector('.ciencia-titulo').textContent = t.ciencia4Titulo;
+      cienciaItems[3].querySelector('.ciencia-texto').textContent = t.ciencia4Texto;
+      document.querySelectorAll('.seccion-label')[4].textContent = t.labelProtocolo;
+      document.querySelectorAll('.seccion-titulo')[3].innerHTML = t.tituloProtocolo;
+      document.querySelectorAll('.seccion-descripcion')[3].textContent = t.descProtocolo;
+      const pasoItems = document.querySelectorAll('.paso-item');
+      pasoItems[0].querySelector('.paso-titulo').textContent = t.paso1Titulo;
+      pasoItems[0].querySelector('.paso-texto').textContent = t.paso1Texto;
+      pasoItems[1].querySelector('.paso-titulo').textContent = t.paso2Titulo;
+      pasoItems[1].querySelector('.paso-texto').textContent = t.paso2Texto;
+      pasoItems[2].querySelector('.paso-titulo').textContent = t.paso3Titulo;
+      pasoItems[2].querySelector('.paso-texto').textContent = t.paso3Texto;
+      document.querySelector('.protocolo-nota p').textContent = t.notaProtocolo;
+      document.querySelectorAll('.seccion-label')[5].textContent = t.labelAccion;
+      document.querySelectorAll('.seccion-titulo')[4].innerHTML = t.tituloAccion;
+      document.querySelectorAll('.seccion-descripcion')[4].textContent = t.descAccion;
+      const benefItems = document.querySelectorAll('.beneficio-item');
+      benefItems[0].querySelector('.beneficio-titulo').textContent = t.beneficio1Titulo;
+      benefItems[0].querySelector('.beneficio-texto').textContent = t.beneficio1Texto;
+      benefItems[1].querySelector('.beneficio-titulo').textContent = t.beneficio2Titulo;
+      benefItems[1].querySelector('.beneficio-texto').textContent = t.beneficio2Texto;
+      benefItems[2].querySelector('.beneficio-titulo').textContent = t.beneficio3Titulo;
+      benefItems[2].querySelector('.beneficio-texto').textContent = t.beneficio3Texto;
+      document.querySelector('.formulario-titulo').textContent = t.formularioTitulo;
+      document.getElementById('nombre').placeholder = t.placeholderNombre;
+      document.getElementById('correo').placeholder = t.placeholderCorreo;
+      document.querySelector('.boton-accion').textContent = t.botonAccion;
+      document.querySelector('.formulario-nota').textContent = t.formularioNota;
+      document.querySelector('.footer-producto').textContent = t.footerProducto;
+      document.querySelector('.footer-copy').textContent = t.footerCopy;
+      document.body.setAttribute('data-lang', idioma);
+    }
+
+    function enviarFormulario() {
+      const idioma = document.body.getAttribute('data-lang') || 'es';
+      const t = textos[idioma];
+      const nombre = document.getElementById('nombre').value;
+      const correo = document.getElementById('correo').value;
+      const confirmacion = document.getElementById('confirmacion');
+      if (nombre === '' || correo === '') {
+        confirmacion.style.color = '#6a3a2a';
+        confirmacion.textContent = t.errorCampos;
+        return;
+      }
+      confirmacion.style.color = '#9e8e7e';
+      confirmacion.textContent = t.mensajeExito;
+      document.getElementById('nombre').value = '';
+      document.getElementById('correo').value = '';
+    }
+  </script>
+
+</body>
+</html>
