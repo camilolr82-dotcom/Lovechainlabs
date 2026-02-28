@@ -14,11 +14,45 @@
       box-sizing: border-box;
     }
 
-
+```
 body {
   background-color: #0a0a0a;
   color: #e8ddd0;
   font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+
+/* =====================
+   IMAGEN VERTICAL DERECHA
+===================== */
+.imagen-lateral {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imagen-lateral img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.18;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.9) 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.9) 100%);
+}
+
+/* =====================
+   LOGO HERO
+===================== */
+.logo-hero {
+  width: 80px;
+  height: auto;
+  margin-bottom: 32px;
+  filter: brightness(0) invert(1) opacity(0.7);
 }
 
 /* =====================
@@ -83,7 +117,7 @@ body {
 
 .producto-nombre {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 88px;
+  font-size: 108px;
   font-weight: 300;
   color: #f0e6d8;
   letter-spacing: 12px;
@@ -92,7 +126,7 @@ body {
 }
 
 .slogan {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 200;
   letter-spacing: 3px;
   color: #b09e8e;
@@ -130,7 +164,7 @@ body {
 
 .seccion-titulo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 52px;
+  font-size: 62px;
   font-weight: 300;
   color: #f0e6d8;
   line-height: 1.3;
@@ -138,7 +172,7 @@ body {
 }
 
 .seccion-descripcion {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 200;
   color: #9e8e7e;
   line-height: 2;
@@ -594,6 +628,12 @@ body {
 </head>
 <body data-lang="es">
 
+  <!-- IMAGEN LATERAL FIJA -->
+
+  <div class="imagen-lateral">
+    <img src="https://images.unsplash.com/photo-1684170114122-91efd52f428f?q=80&w=802&auto=format&fit=crop" alt="Science background"/>
+  </div>
+
   <!-- LANG SWITCHER -->
 
   <div class="lang-switcher">
@@ -605,6 +645,7 @@ body {
   <!-- HERO -->
 
   <section class="hero">
+    <img class="logo-hero" src="https://raw.githubusercontent.com/camilolr82-dotcom/Lovechainlabs/main/Logo.png" alt="Lovechain Labs"/>
     <p class="labs-nombre">LOVECHAIN LABS</p>
     <h1 class="producto-nombre">PHASE 0.2</h1>
     <p class="slogan">Recupera lo que el tratamiento no puede devolverte.</p>
