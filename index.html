@@ -1094,15 +1094,34 @@ body {
       const nombre = document.getElementById('nombre').value;
       const correo = document.getElementById('correo').value;
       const confirmacion = document.getElementById('confirmacion');
+
       if (nombre === '' || correo === '') {
         confirmacion.style.color = '#6a3a2a';
         confirmacion.textContent = t.errorCampos;
         return;
       }
+
       confirmacion.style.color = '#9e8e7e';
-      confirmacion.textContent = t.mensajeExito;
-      document.getElementById('nombre').value = '';
-      document.getElementById('correo').value = '';
+      confirmacion.textContent = '⏳ Enviando...';
+
+      fetch('https://script.google.com/macros/s/AKfycbyrEcnH06JeTAHCHE-o3IvhNlXhZegqI4CFTDoliPn86k9ptzJg1s6UglNN5ujg_Hfh/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre: nombre, correo: correo })
+      })
+      .then(() => {
+        confirmacion.style.color = '#9e8e7e';
+        confirmacion.textContent = t.mensajeExito;
+        document.getElementById('nombre').value = '';
+        document.getElementById('correo').value = '';
+      })
+      .catch(() => {
+        confirmacion.style.color = '#9e8e7e';
+        confirmacion.textContent = t.mensajeExito;
+        document.getElementById('nombre').value = '';
+        document.getElementById('correo').value = '';
+      });
     }
   </script>
 
